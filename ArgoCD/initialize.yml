@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: reddit-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/jpaudel8/Reddit-Project.git'
+    path: K8s/
+    # This is the field that controls the branch, tag, or commit SHA
+    targetRevision: only_EKS_and_ArgoCD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
