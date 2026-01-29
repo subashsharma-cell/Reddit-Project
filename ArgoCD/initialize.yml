@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/jpaudel8/Reddit-Project.git'
+    repoURL: 'https://github.com/subashsharma-cell/Reddit-Project.git'
     path: K8s/
     # This is the field that controls the branch, tag, or commit SHA
     targetRevision: only_EKS_and_ArgoCD
