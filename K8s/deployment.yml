@@ -19,3 +19,11 @@ spec:
         image: jpaudel8/reddit:15
         ports:
         - containerPort: 3000
+        # --- ADD THIS SECTION BELOW ---
+        env:
+        - name: DATABASE_URL
+          value: "mongodb://mongo-service:27017/reddit"
+        - name: NEXTAUTH_URL
+          value: "http://k8s-default-ingressr-xxxx.elb.amazonaws.com" # <--- REPLACE THIS with your actual ALB URL
+        - name: NEXTAUTH_SECRET
+          value: "supersecret"
